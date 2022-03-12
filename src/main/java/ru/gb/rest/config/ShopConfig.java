@@ -6,12 +6,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import ru.gb.rest.service.ManufacturerGateway;
+import ru.gb.rest.service.OrderGateway;
 
 import java.util.Optional;
 
 @Configuration
 @EnableJpaAuditing(auditorAwareRef = "auditorAwareBean")
-@EnableFeignClients(basePackageClasses = {ManufacturerGateway.class})
+@EnableFeignClients(basePackageClasses = {ManufacturerGateway.class, OrderGateway.class})
 public class ShopConfig {
 
     @Bean
